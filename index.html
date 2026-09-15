@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simple QR Code Generator">
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="card">
+      <div class="header">
+        <h1>QR Code Generator</h1>
+        <p>Create and download a QR code instantly.</p>
+      </div>
+
+      <div class="layout">
+        <div class="controls">
+          <label for="qrText">Text or URL</label>
+          <textarea id="qrText" placeholder="Type or paste text, URL, phone number, etc.">https://example.com</textarea>
+
+          <div class="row">
+            <div class="field">
+              <label for="qrSize">Size</label>
+              <select id="qrSize">
+                <option value="128">128 × 128 px</option>
+                <option value="256">256 × 256 px</option>
+                <option value="512" selected>512 × 512 px</option>
+                <option value="768">768 × 768 px</option>
+                <option value="1024">1024 × 1024 px</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="format">Download Format</label>
+              <select id="format">
+                <option value="png" selected>PNG</option>
+                <option value="jpg">JPG</option>
+                <option value="svg">SVG</option>
+                <option value="pdf">PDF</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="foreground">Foreground Colour</label>
+              <div class="colour-control">
+                <input type="color" id="foreground" value="#000000">
+                <input type="text" id="foregroundHex" value="#000000" maxlength="7" aria-label="Foreground hex colour">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="background">Background Colour</label>
+              <div class="colour-control">
+                <input type="color" id="background" value="#FFFFFF">
+                <input type="text" id="backgroundHex" value="#FFFFFF" maxlength="7" aria-label="Background hex colour">
+              </div>
+            </div>
+          </div>
+
+          <div class="buttons">
+            <button id="downloadBtn" class="primary">Download QR Code</button>
+            <button id="resetBtn" class="secondary">Reset</button>
+          </div>
+          <p id="status" class="status" aria-live="polite"></p>
+        </div>
+
+        <div class="preview-panel">
+          <h2>Preview</h2>
+          <div id="preview" class="preview">
+            <div id="qrContainer"></div>
+          </div>
+          <p class="preview-note">The preview updates automatically when you change the text, size, or colours.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- QRCode.js: generates the QR code locally in the browser -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <!-- jsPDF: creates PDF downloads locally in the browser -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
