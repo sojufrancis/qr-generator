@@ -1,12 +1,18 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bulk QR Code Generator</title><link rel="stylesheet" href="style.css"></head><body>
 <header><b>QR Code Generator</b><nav><a href="index.html">Single QR</a><a class="active" href="bulk.html">Bulk QR</a></nav></header>
 <main><section class="card"><div class="head"><h1>Bulk QR Code Generator</h1><p>Upload CSV, Excel or ODT and create many QR codes at once.</p></div><div class="content">
-<div class="upload"><label>Upload CSV / Excel / ODT</label><input id="file" type="file" accept=".csv,.xlsx,.xls,.odt"><small>Files are processed locally in your browser.</small><p><b>Sample:</b> <a href="samples/sample-qr.csv" download>CSV</a> <a href="samples/sample-qr.xlsx" download>Excel</a> <a href="samples/sample-qr.odt" download>ODT</a></p></div>
+<div class="upload"><label>Upload CSV / Excel / ODT</label><input id="file" type="file" accept=".csv,.xlsx,.xls,.odt"><small>
+  Files are processed locally in your browser.
+</small><p><b>Sample:</b> <a href="samples/sample-qr.csv" download>CSV</a> <a href="sample-qr.xlsx" download>Excel</a> <a href="samples/sample-qr.odt" download>ODT</a></p></div>
 <div id="opts" class="hidden"><div class="row"><div><label>QR Content Column</label><select id="contentCol"></select></div><div><label>Download File Name Column</label><select id="nameCol"></select></div></div>
-<div class="row"><div><label>QR Size</label><select id="bsize"><option>128</option><option>256</option><option selected>512</option><option>768</option><option>1024</option></select></div><div><label>Download Format</label><select id="bfmt"><option selected>PNG</option><option>JPG</option><option>SVG</option><option>PDF</option></select></div></div>
-<div class="row"><div><label>Foreground Colour</label><div class="color"><input type="color" id="bfg" value="#000000"><input id="bfgh" value="#000000"></div></div><div><label>Background Colour</label><div class="color"><input type="color" id="bbg" value="#ffffff"><input id="bbgh" value="#FFFFFF"></div></div></div>
+<div class="row"><div><label>QR Size</label><select id="bsize"><option>128</option><option>256</option><option selected>512</option><option>768</option><option>1024</option></select></div>
+  <div><label>Download Format</label><select id="bfmt"><option selected>PNG</option><option>JPG</option><option>SVG</option><option>PDF</option></select></div></div>
+<div class="row"><div><label>Foreground Colour</label><div class="color"><input type="color" id="bfg" value="#000000"><input id="bfgh" value="#000000"></div></div>
+  <div><label>Background Colour</label><div class="color"><input type="color" id="bbg" value="#ffffff"><input id="bbgh" value="#FFFFFF"></div></div></div>
 <div class="optional"><label><input type="checkbox" id="bcapOn"> Add text below each QR code</label><select id="capCol" disabled></select><small>Choose the column whose value will be printed below each QR.</small></div>
 <button id="generate">Generate QR Codes</button><button class="secondary" id="zip" disabled>Download All as ZIP</button><p id="status"></p></div>
 <div id="results" class="hidden"><h2>Preview / Results <span id="count"></span></h2><div id="grid"></div></div>
 </div></section></main>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script><script src="bulk.js"></script></body></html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="bulk.js"></script></body></html>
