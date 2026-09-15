@@ -1,88 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Simple QR Code Generator">
-  <title>QR Code Generator</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <main class="app">
-    <section class="card">
-      <div class="header">
-        <h1>QR Code Generator</h1>
-        <p>Create and download a QR code instantly.</p>
-      </div>
-
-      <div class="layout">
-        <div class="controls">
-          <label for="qrText">Text or URL</label>
-          <textarea id="qrText" placeholder="Type or paste text, URL, phone number, etc.">https://example.com</textarea>
-
-          <div class="row">
-            <div class="field">
-              <label for="qrSize">Size</label>
-              <select id="qrSize">
-                <option value="128">128 × 128 px</option>
-                <option value="256">256 × 256 px</option>
-                <option value="512" selected>512 × 512 px</option>
-                <option value="768">768 × 768 px</option>
-                <option value="1024">1024 × 1024 px</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="format">Download Format</label>
-              <select id="format">
-                <option value="png" selected>PNG</option>
-                <option value="jpg">JPG</option>
-                <option value="svg">SVG</option>
-                <option value="pdf">PDF</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="field">
-              <label for="foreground">Foreground Colour</label>
-              <div class="colour-control">
-                <input type="color" id="foreground" value="#000000">
-                <input type="text" id="foregroundHex" value="#000000" maxlength="7" aria-label="Foreground hex colour">
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="background">Background Colour</label>
-              <div class="colour-control">
-                <input type="color" id="background" value="#FFFFFF">
-                <input type="text" id="backgroundHex" value="#FFFFFF" maxlength="7" aria-label="Background hex colour">
-              </div>
-            </div>
-          </div>
-
-          <div class="buttons">
-            <button id="downloadBtn" class="primary">Download QR Code</button>
-            <button id="resetBtn" class="secondary">Reset</button>
-          </div>
-          <p id="status" class="status" aria-live="polite"></p>
-        </div>
-
-        <div class="preview-panel">
-          <h2>Preview</h2>
-          <div id="preview" class="preview">
-            <div id="qrContainer"></div>
-          </div>
-          <p class="preview-note">The preview updates automatically when you change the text, size, or colours.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- QRCode.js: generates the QR code locally in the browser -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-  <!-- jsPDF: creates PDF downloads locally in the browser -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="script.js"></script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QR Code Generator</title><link rel="stylesheet" href="style.css"></head><body>
+<header><b>QR Code Generator</b><nav><a class="active" href="index.html">Single QR</a><a href="bulk.html">Bulk QR</a></nav></header>
+<main><section class="card"><div class="head"><h1>QR Code Generator</h1><p>Create and download a QR code instantly.</p></div><div class="layout"><div>
+<label>Text or URL</label><textarea id="text">https://example.com</textarea>
+<div class="row"><div><label>Size</label><select id="size"><option>128</option><option>256</option><option selected>512</option><option>768</option><option>1024</option></select></div><div><label>Download Format</label><select id="fmt"><option selected>PNG</option><option>JPG</option><option>SVG</option><option>PDF</option></select></div></div>
+<div class="row"><div><label>Foreground Colour</label><div class="color"><input type="color" id="fg" value="#000000"><input id="fgh" value="#000000"></div></div><div><label>Background Colour</label><div class="color"><input type="color" id="bg" value="#ffffff"><input id="bgh" value="#FFFFFF"></div></div></div>
+<div class="optional"><label><input type="checkbox" id="capOn"> Add text below QR code</label><input id="cap" placeholder="Optional label" disabled><small>Useful for identifying QR codes.</small></div>
+<button id="download">Download QR Code</button><button class="secondary" id="reset">Reset</button><p id="status"></p></div>
+<div class="preview"><h2>Preview</h2><div id="qr"></div><div id="caption"></div></div></div></section></main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script><script src="script.js"></script></body></html>
